@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Camera
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <p></p>
+
+  <div text-center>
+
+    <h2>Take a picture of your food</h2>
+
+    <!--<button ion-button icon-right (click)="onTakePicture()">Take Picture <ion-icon name="camera"></ion-icon></button> -->
+    <button ion-button icon-right (click)="onTakePictureTest()">Take Picture <ion-icon name="camera"></ion-icon></button>
+    <button *ngIf="image" ion-button icon-right (click)="onSendImage()">Send Picture <ion-icon name="send"></ion-icon></button>
+
+    <img *ngIf="image" [src]="domSanitizer.bypassSecurityTrustUrl(image)" />
+
+  </div>
+
+
+</ion-content>

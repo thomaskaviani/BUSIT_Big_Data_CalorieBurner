@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Description
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71gI-IUNUkL._SL1500_.jpg">
+      </ion-avatar>
+      <h2>Sync</h2>
+      <p>Sync your images from instagram</p>
+    </ion-item>
+
+
+
+  </ion-list>
+  <ion-card *ngFor="let entry of apiResponse">
+    <img src="{{entry.images.low_resolution.url}}"/>
+  </ion-card>
+</ion-content>

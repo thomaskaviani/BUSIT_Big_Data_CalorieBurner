@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab color="blue" (click)="reload()"><ion-icon name="sync"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <ion-list-header>
+      Today
+    </ion-list-header>
+
+    <ion-item *ngFor="let food of foods" >
+      <ion-avatar item-start>
+        <img src="{{food.url}}">
+      </ion-avatar>
+      <h2>{{food.name}}  <small>{{food.amount}} </small></h2>
+      <h3>{{food.kcal}} kcal | {{food.percentageFat}}% fat</h3>
+      <button ion-button (click)="itemSelected(food)" item-end>View</button>
+
+    </ion-item>
+    <ion-list-header>
+      Yesterday
+    </ion-list-header>
+  </ion-list>
+
+
+
+</ion-content>

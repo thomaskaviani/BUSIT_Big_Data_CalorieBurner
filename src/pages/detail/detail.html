@@ -1,0 +1,77 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="{{food.url}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{food.name}}
+        <small>{{food.createdAt}}</small>
+      </ion-card-title>
+
+    </ion-card-content>
+    <ion-list no-padding>
+      <ion-item>
+        Calories
+        <ion-note item-end>
+          {{food.kcal}}
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        Fat Percentage
+        <ion-note item-end>
+          {{food.percentageFat}} %
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        servings
+        <ion-note item-end>
+          {{food.amount}}
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        Total Calories
+        <ion-note item-end>
+          {{food.kcal * food.amount}}
+        </ion-note>
+      </ion-item>
+
+    </ion-list>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)="favorate(food)">
+          <ion-icon *ngIf="!food.favorite" name='star-outline'></ion-icon>
+          <ion-icon *ngIf="food.favorite" name='star'></ion-icon>
+          Favorite
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start (click)="edit(food)">
+          <ion-icon name='create'></ion-icon>
+          Edit
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start (click)="delete(food)">
+          <ion-icon name='trash'></ion-icon>
+          Delete
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the EditFoodPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit {{food.Name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-img max-height="50" src="{{food.url}}"></ion-img>
+    <ion-card-content>
+      <ion-card-title>
+        {{food.Name}}
+      </ion-card-title>
+
+    </ion-card-content>
+    <ion-list no-padding>
+      <ion-item>
+        calories per serving
+        <ion-note item-end>
+          {{food.kcal}}
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        amount
+        <ion-note item-end>
+          {{food.amount}}
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        Total calories
+        <ion-note item-end>
+          {{food.amount * food.kcal}}
+        </ion-note>
+      </ion-item>
+
+    </ion-list>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start (click)="delAmount()">
+          <ion-icon name='remove'></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <p >{{food.amount}}</p>
+
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start (click)="addAmount()">
+          <ion-icon name='add'></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <button ion-button full (click)="clickedSave(food)">save</button>
+  </ion-card>
+</ion-content>
